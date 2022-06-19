@@ -24,5 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/utama', \App\Http\Livewire\Utama::class);
     Route::get('/customer', \App\Http\Livewire\Customer::class);
     Route::get('/express', \App\Http\Livewire\Express::class);
+    Route::get('/extend', \App\Http\Livewire\Extend::class);
+    Route::get('/transaksi', \App\Http\Livewire\Transaksi::class);
     
 });

@@ -9,5 +9,9 @@ class Extend extends Model
 {
     use HasFactory;
     protected $table='extend';
-    protected $primaryKey='id';
+    protected $fillable = ['nama', 'harga'];
+
+    public function transaksi_laundry(){
+        return $this->belongsToMany(TransaksiLaundry::class);
+    }
 }

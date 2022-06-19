@@ -35,6 +35,6 @@ class CreateTransaksiLaundriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksi_laundries');
+        Schema::dropIfExists('transaksi_laundry');
     }
 }

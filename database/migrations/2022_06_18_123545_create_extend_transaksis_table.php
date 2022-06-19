@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExpressesTable extends Migration
+class CreateExtendTransaksisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateExpressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('express', function (Blueprint $table) {
+        Schema::create('extend_transaksi_laundry', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->integer('durasi');
-            $table->integer('harga');
+            $table->foreignId('transaksi_laundry');
+            $table->foreignId('extend_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateExpressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('express');
+        Schema::dropIfExists('extend_transaksi_laundry');
     }
 }

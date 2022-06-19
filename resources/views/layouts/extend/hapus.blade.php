@@ -4,7 +4,7 @@ style="padding-right: 12px; display: block;">
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Hapus Express</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Hapus Extend</h5>
             <button wire:click="format" type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

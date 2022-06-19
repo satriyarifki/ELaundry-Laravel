@@ -28,6 +28,6 @@ class CreateSetrikasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('setrikas');
+        Schema::dropIfExists('setrika');
     }
 }

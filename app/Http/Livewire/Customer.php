@@ -113,7 +113,7 @@ class Customer extends Component
     public function render()
     {
         if ($this->search) {
-            $customer = MCustomer::where('name', 'like', '%'. $this->search .'%')->paginate(5);
+            $customer = MCustomer::where('nama', 'like', '%'. $this->search .'%')->paginate(5);
         } else {
             $customer = MCustomer::paginate(5);
         }

@@ -28,6 +28,6 @@ class CreateExtendsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('extends');
+        Schema::dropIfExists('extend');
     }
 }

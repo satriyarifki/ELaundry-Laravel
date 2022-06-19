@@ -3,8 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
-class CreateExpressesTable extends Migration
+class MovePivotColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +14,7 @@ class CreateExpressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('express', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->integer('durasi');
-            $table->integer('harga');
-            $table->timestamps();
-        });
+        DB::statement("ALTER TABLE extend_transaksi_laundry MODIFY COLUMN transaksi_laundry_id DATE AFTER id");
     }
 
     /**
@@ -29,6 +24,6 @@ class CreateExpressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('express');
+        //
     }
 }

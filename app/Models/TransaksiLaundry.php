@@ -9,5 +9,11 @@ class TransaksiLaundry extends Model
 {
     use HasFactory;
     protected $table='transaksi_laundry';
-    protected $primaryKey='id';
+    protected $fillable = ['customer_id', 'express_id', 'setrika_id', 'berat', 'total_bayar', 'status', 'tanggal_diterima', 'tanggal_diambil'];
+
+    public function extend(){
+        return $this->belongsToMany(Extend::class);
+    }
 }
+
+

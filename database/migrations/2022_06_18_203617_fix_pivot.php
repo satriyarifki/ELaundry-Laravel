@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateExpressesTable extends Migration
+class FixPivot extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateExpressesTable extends Migration
      */
     public function up()
     {
-        Schema::create('express', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->integer('durasi');
-            $table->integer('harga');
-            $table->timestamps();
+        Schema::table('extend_transaksi_laundry', function(Blueprint $table) {
+            $table->dropColumn('transaksi_laundry_id');
         });
     }
 
@@ -29,6 +25,6 @@ class CreateExpressesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('express');
+        //
     }
 }
