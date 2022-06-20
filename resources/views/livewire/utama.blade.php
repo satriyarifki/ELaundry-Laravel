@@ -91,7 +91,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row align-items-center">
-                                <div class="col-md-8">
+                                <div class="col-md-7">
                                     <h5>Total Customer :</h5>
                                 </div>
                                 <div class="col-md-4">
@@ -108,10 +108,10 @@
                    <div class="card">
                        <div class="card-body">
                         <h5 class="card-title">Transaksi Selesai</h5>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-sm">
                             <thead>
                                 <tr>
-                                    <th width="10%" scope="col">No</th>
+                                    <th width="5%" scope="col">No</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Total Bayar</th>
                                     <th scope="col">Layanan</th>
@@ -123,18 +123,16 @@
                             </thead>
                             <tbody>
                                 @foreach ($selesai as $item)
-                                <tr>
-                                    <th scope="row">{{ $loop->iteration }}</th>
-                                    <td>{{ $item->customer->nama }}</td>
-                                    <td>Rp. {{ number_format($item->total_bayar) }}</td>
-                                    <td>{{ $item->express->nama }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($item->tanggal_diterima)->format('d m Y, H:i') }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($item->tanggal_diambil)->format('d m Y, H:i') }}</td>
-                                    <td><img width="100px" src="{{asset('storage/'.$item->id.'.jpg')}}">
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button wire:click="show_edit({{ $item->id }})" type="button"
+                                <tr class="">
+                                    <th scope="row" class="align-middle">{{ $loop->iteration }}.</th>
+                                    <td class="align-middle">{{ $item->customer->nama }}</td>
+                                    <td class="align-middle">Rp. {{ number_format($item->total_bayar) }}</td>
+                                    <td class="align-middle">{{ $item->express->nama }}</td>
+                                    <td class="align-middle">{{ \Carbon\Carbon::parse($item->tanggal_diterima)->format('d m Y, H:i') }}</td>
+                                    <td class="align-middle">{{ \Carbon\Carbon::parse($item->tanggal_diambil)->format('d m Y, H:i') }}</td>
+                                    <td class="align-middle"><img width="100px" src="{{asset('storage/'.$item->id.'.jpg')}}" id="zoomA">
+                                        <button wire:click="show_edit({{ $item->id }})" type="button"
                                             class="btn btn-sm btn-primary mr-2">Tambah</button>
-                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach

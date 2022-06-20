@@ -23,6 +23,10 @@ class TransaksiLaundry extends Model
     {
         return $this->belongsTo(Express::class);
     }
+    public function setrika()
+    {
+        return $this->belongsTo(Setrika::class);
+    }
 }
 
 

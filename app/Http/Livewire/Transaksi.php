@@ -77,6 +77,7 @@ class Transaksi extends Component
                 'status' => 0,
                 'tanggal_diterima' => now(),
                 'tanggal_diambil' => now()->addHours($express->durasi),
+                'path_image' => '',
             ]);
 
 
@@ -87,7 +88,7 @@ class Transaksi extends Component
 
     public function render()
     {
-        if ($this->express_nama && $this->berat && $this->setrika_nama && $this->extend) {
+        if ($this->express_nama && $this->berat && $this->setrika_nama) {
             $express = express::find($this->express_nama);
             $extends = Extend::find($this->extend);
             $setrika = Setrika::find($this->setrika_nama);
