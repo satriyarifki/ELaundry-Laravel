@@ -8,6 +8,7 @@ use App\Models\Customer;
 use Faker\Factory;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class Utama extends Component
 {
@@ -48,6 +49,7 @@ class Utama extends Component
     public function render()
     {
         $faker = Factory::create();
+        $nowDate = Carbon::now();
 
         $count_diterima = TransaksiLaundry::where('status', 0)->count();
         $count_dicuci = TransaksiLaundry::where('status', 1)->count();
@@ -55,12 +57,12 @@ class Utama extends Component
         $count_disetrika = TransaksiLaundry::where('status', 3)->count();
         $count_menunggu_pembayaran = TransaksiLaundry::where('status', 4)->count();
         $count_selesa = TransaksiLaundry::where('status', 5)->count();
-        $count_selesai = TransaksiLaundry::where('tanggal_diambil','<=', now())->count();
+        $count_selesai = TransaksiLaundry::whereDate('tanggal_diambil','<=', $nowDate)->count();
         $count_customer = Customer::all()->count();
 
         $selesa = TransaksiLaundry::latest()->limit(5)->where('status', 5)->get();
         $all = TransaksiLaundry::all();
-        $selesai = TransaksiLaundry::where('tanggal_diambil','<=', now());
+        $selesai = TransaksiLaundry::whereDate('tanggal_diambil','<=', $nowDate)->get();
         return view('livewire.utama',compact('count_diterima', 'count_dicuci', 'count_dikeringkan', 'count_disetrika',
         'count_menunggu_pembayaran', 'count_selesai', 'count_customer', 'selesai', 'all'));
     }
