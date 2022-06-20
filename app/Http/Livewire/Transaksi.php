@@ -63,7 +63,7 @@ class Transaksi extends Component
             
             foreach ($this->extend as $item) {
                 ExtendTransaksi::create([
-                    'transaksi_laundry_id' => $trans+1,
+                    'transaksi_laundry_id' => $trans->id+1,
                     'extend_id' => $item,
                 ]);
                 $tambah += Extend::find($item)->harga;

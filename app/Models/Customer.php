@@ -10,4 +10,9 @@ class Customer extends Model
     use HasFactory;
     protected $table='customer';
     protected $fillable = ['nama', 'hp', 'alamat'];
+
+    public function transaksi()
+    {
+        return $this->hasMany(TransaksiLaundry::class);
+    }
 }

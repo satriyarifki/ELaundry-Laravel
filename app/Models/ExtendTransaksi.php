@@ -8,6 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class ExtendTransaksi extends Model
 {
     use HasFactory;
-    protected $table='extend_transaksi_laundry';
-    protected $fillable = ['transaksi_laundry_id', 'extend_id'];
 }

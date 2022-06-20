@@ -11,7 +11,7 @@ class Extend extends Model
     protected $table='extend';
     protected $fillable = ['nama', 'harga'];
 
-    public function transaksi_laundry(){
+    public function transaksi(){
         return $this->belongsToMany(TransaksiLaundry::class);
     }
 }

@@ -26,5 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/express', \App\Http\Livewire\Express::class);
     Route::get('/extend', \App\Http\Livewire\Extend::class);
     Route::get('/transaksi', \App\Http\Livewire\Transaksi::class);
+    Route::get('/print', [App\Http\Controllers\PdfPrint::class, 'print']);
+
     
 });
