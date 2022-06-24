@@ -110,11 +110,11 @@
                         <h5 class="card-title">Transaksi Selesai</h5>
                         <table class="table table-striped table-sm">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th width="5%" scope="col">No</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Total Bayar</th>
-                                    <th scope="col">Layanan</th>
+                                    <th scope="col">Express</th>
                                     <th scope="col">Tanggal Diterima</th>
                                     <th scope="col">Tanggal Diambil</th>
                                     <th scope="col">Gambar</th>
@@ -123,7 +123,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($selesai as $item)
-                                <tr class="">
+                                <tr class="text-center">
                                     <th scope="row" class="align-middle">{{ $loop->iteration }}.</th>
                                     <td class="align-middle">{{ $item->customer->nama }}</td>
                                     <td class="align-middle">Rp. {{ number_format($item->total_bayar) }}</td>
@@ -132,7 +132,7 @@
                                     <td class="align-middle">{{ \Carbon\Carbon::parse($item->tanggal_diambil)->format('d m Y, H:i') }}</td>
                                     <td class="align-middle"><img width="100px" src="{{asset('storage/'.$item->id.'.jpg')}}" id="zoomA">
                                         <button wire:click="show_edit({{ $item->id }})" type="button"
-                                            class="btn btn-sm btn-primary mr-2">Tambah</button>
+                                            class="btn btn-sm btn-primary mr-2">+</button>
                                     </td>
                                 </tr>
                                 @endforeach

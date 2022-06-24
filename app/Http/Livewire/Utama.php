@@ -62,7 +62,8 @@ class Utama extends Component
 
         $selesa = TransaksiLaundry::latest()->limit(5)->where('status', 5)->get();
         $all = TransaksiLaundry::all();
-        $selesai = TransaksiLaundry::whereDate('tanggal_diambil','<=', $nowDate)->get();
+        $selesai = TransaksiLaundry::whereDate('tanggal_diambil','<=', $nowDate)->paginate(5);;
+        $selesai = $selesai->reverse();
         return view('livewire.utama',compact('count_diterima', 'count_dicuci', 'count_dikeringkan', 'count_disetrika',
         'count_menunggu_pembayaran', 'count_selesai', 'count_customer', 'selesai', 'all'));
     }

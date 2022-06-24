@@ -4,7 +4,7 @@
             @include('layouts/sidebar')
         </div>
         <div class="col-md-8 col-lg-9">
-            <h2>Halaman express</h2>
+            <h2>Halaman Express</h2>
 
             @include('layouts/layanan/tambah')
             @include('layouts/layanan/edit')

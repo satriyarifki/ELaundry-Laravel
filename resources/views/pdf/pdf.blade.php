@@ -7,7 +7,7 @@
                 <h5 class="card-title">Data Transaksi</h5>
                 <table class="table table-sm table-striped">
                     <thead class="thead-dark">
-                        <tr>
+                        <tr class="text-center">
                             <th width="5%" scope="col">No</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Total Bayar</th>
@@ -20,7 +20,7 @@
                     </thead>
                     <tbody>
                         @foreach ($transaksi as $item)
-                            <tr>
+                            <tr class="text-center">
                                 <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $item->customer->nama }}</td>
                                 <td>Rp. {{ number_format($item->total_bayar) }}</td>
