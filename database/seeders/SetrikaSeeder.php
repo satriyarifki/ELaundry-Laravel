@@ -15,6 +15,10 @@ class SetrikaSeeder extends Seeder
     public function run()
     {
         Setrika::create([
+            'nama' => 'Pakai',
+            'harga_setrika' => 2500,
+        ]);
+        Setrika::create([
             'nama' => 'Tidak Pakai',
             'harga_setrika' => 0,
         ]);
