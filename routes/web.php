@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/print', [App\Http\Controllers\PdfPrint::class, 'print']);
 
     
+});
+
+Route::get('/config', function () {
+    Artisan::call(
+        'migrate:fresh',
+        [
+            '--force' => true,
+        ]
+    );
+    Artisan::call(
+        'db:seed',
+        [
+            '--force' => true,
+        ]
+    );
 });
